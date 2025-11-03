@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Locator — Posana</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav id="mainNav" class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="https://eatposana.com/cdn/shop/files/logo_new_e4990b7c-e496-4582-b93c-a1f8a7928409.png?v=1738559624&width=360" alt="Posana" style="height: 36px; width: auto; display: block;"/>
+                </a>
+            </div>
+            <div id="navMenu" class="nav-menu">
+                <a href="index.html#shop" class="nav-link">Shop</a>
+                <a href="index.html#wild" class="nav-link">Community</a>
+                <a href="store-locator.html" class="nav-link active">Store Locator</a>
+                <a href="index.html#about" class="nav-link">Our Story</a>
+            </div>
+            <button class="btn-order" onclick="window.location.href='index.html#shop'">Order Now</button>
+            <button id="navToggle" class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="locator-hero">
+        <div class="locator-hero-content">
+            <span class="section-label">Store Locator</span>
+            <h1 class="section-title">
+                Find Posana <span class="italic word-elephant">Near You</span>
+            </h1>
+            <p class="section-description">Available at hundreds of retailers nationwide</p>
+            
+            <div class="locator-search">
+                <input type="text" class="search-input" placeholder="Enter your zip code or city" id="locationSearch">
+                <button class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="locations-section">
+        <div class="locations-filter">
+            <button class="filter-btn active" data-filter="all">All Locations</button>
+            <button class="filter-btn" data-filter="whole-foods">Whole Foods</button>
+            <button class="filter-btn" data-filter="sprouts">Sprouts</button>
+            <button class="filter-btn" data-filter="specialty">Specialty Stores</button>
+        </div>
+
+        <div class="locations-grid" id="locationsGrid">
+            <div class="location-card" data-category="whole-foods">
+                <div class="location-image">
+                    <span class="location-badge">Flagship</span>
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Whole Foods Market - DTLA</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">788 S Grand Ave, Los Angeles, CA 90017</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 8am - 10pm</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span class="info-text">(213) 555-0142</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                        <button class="btn btn-outline btn-small">Call Store</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <span class="location-badge new">New</span>
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Erewhon Market - Venice</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">585 Venice Blvd, Venice, CA 90291</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 7am - 11pm</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span class="info-text">(310) 555-0198</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                        <button class="btn btn-outline btn-small">Call Store</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="sprouts">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Sprouts Farmers Market - West Hollywood</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">7511 Santa Monica Blvd, West Hollywood, CA 90046</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 7am - 10pm</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span class="info-text">(323) 555-0167</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                        <button class="btn btn-outline btn-small">Call Store</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="whole-foods">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Whole Foods Market - Santa Monica</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">500 Wilshire Blvd, Santa Monica, CA 90401</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 8am - 10pm</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span class="info-text">(310) 555-0123</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                        <button class="btn btn-outline btn-small">Call Store</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Rainbow Acres - Culver City</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">13208 W Washington Blvd, Culver City, CA 90066</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 9am - 9pm</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span class="info-text">(310) 555-0189</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                        <button class="btn btn-outline btn-small">Call Store</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="sprouts">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                        <img src="https://images.unsplash.com/photo-1588964895597-cfccd6e2dbf9?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Sprouts Farmers Market - Silver Lake</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">2121 Fletcher Dr, Los Angeles, CA 90039</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 7am - 10pm</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span class="info-text">(323) 555-0144</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                        <button class="btn btn-outline btn-small">Call Store</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Stores from Spreadsheet -->
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #ff763f 0%, #d4725c 100%);">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Berkeley Student Food Collective</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">2440 Bancroft Way #102, Berkeley, CA 94704</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 9am - 7pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Extra Mile, Chevron Gas Station</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">451 E Main St, Grass Valley CA 95945-6521</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">24 Hours</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Chevron Gas Station</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">107 E Mcknight Way, Grass Valley CA 95949</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">24 Hours</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Chevron Gas Station</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">860 Arden Way, Sacramento CA 95815</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">24 Hours</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">ampm, Arco Gas Station</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">300 El Camino Ave, Sacramento CA 95815</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">24 Hours</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Shift Change</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">4516 Freeport Blvd Sacramento, CA 95822</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 7am - 9pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">I-5 Dhaba</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">690 Hillgate Rd, Arbuckle CA 95912</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 8am - 8pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Temescal Works</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">490 43rd St, Oakland, CA 94609</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Fri: 9am - 6pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Central Coffee Co, Tracy</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">624 N Central Ave, Tracy, CA 95376</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 7am - 5pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #ff763f 0%, #d4725c 100%);">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Shattuck Market</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">2441 Shattuck Ave., Berkeley, CA 94704</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 8am - 10pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Bakersfield Airport</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">3701 Wings Way, Bakersfield CA 93308</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">24 Hours</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #ff763f 0%, #d4725c 100%);">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Duffl Store</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">2620 Telegraph Ave, Berkeley, CA 94704</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 10am - 10pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Luke's Local</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">2190 Union Street, San Francisco, CA 94123</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 7am - 9pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Casa Laguna Hotel and Spa</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">2510 S Coast Highway, Laguna Beach, CA 92651</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">24 Hours</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Shine Yoga Studio</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">1317 Shadow Creek Drive, Stockton, CA 95209</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sat: 6am - 8pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Coups Caffe Stanford</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">Stanford, CA</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 7am - 5pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Cheeni Chai + Coffee +Tiffin</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">709 Tadlock Drive, Raleigh, NC 27614</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📞</span>
+                            <span class="info-text">(919) 421-1774</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 8am - 8pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                        <button class="btn btn-outline btn-small">Call Store</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">The Majestic</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">6291 W 58th Ave, Arvada, CO 80002</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 10am - 9pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Ground Work Coffee Co, Santa Monica</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">Santa Monica, CA</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 7am - 6pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">4th Wall Nolla</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">614 Gravier Street, New Orleans, LA 70130</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 8am - 10pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="specialty">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Captain + Stoker Coffee</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">1793 Catalina St, Sand City, CA 93955</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 7am - 5pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="whole-foods">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Monterey Market</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">1550 Hopkins Street, Berkeley, CA 94707</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 8am - 7pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="whole-foods">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Piedmont Grocery</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">4038 Piedmont Avenue, Oakland, CA 94611</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 8am - 9pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="whole-foods">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Diablo Foods</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">3615 Mt. Diablo Blvd, Lafayette, CA 94549</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 8am - 8pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="whole-foods">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Farmer Joe's #2</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">3426 Fruitvale Avenue, Oakland, CA 94601</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 8am - 9pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-card" data-category="whole-foods">
+                <div class="location-image">
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <img src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=600&h=400&fit=crop" alt="Store" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="location-content">
+                    <h3 class="location-name">Dehoff's Key Market</h3>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <span class="info-icon">📌</span>
+                            <span class="info-text">1063 Upton Street, Redwood City, CA 94061</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">⏱️</span>
+                            <span class="info-text">Mon-Sun: 8am - 8pm</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary btn-small">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="locator-cta">
+        <div class="cta-content">
+            <h2>Can't Find a Store Near You?</h2>
+            <p>Shop online and get free shipping on orders over $50</p>
+            <button class="btn btn-primary btn-large">Shop Online</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">Posana</h3>
+                    <p class="footer-tagline">Protein doesn’t have to be boring.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">TikTok</a>
+                        <a href="#" class="social-link">Facebook</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Shop</h4>
+                        <a href="index.html#shop" class="footer-link">All Products</a>
+                        <a href="#" class="footer-link">Bundles</a>
+                        <a href="#" class="footer-link">Subscriptions</a>
+                        <a href="#" class="footer-link">Gift Cards</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Company</h4>
+                        <a href="index.html#about" class="footer-link">Our Story</a>
+                        <a href="store-locator.html" class="footer-link">Store Locator</a>
+                        <a href="#" class="footer-link">Sustainability</a>
+                        <a href="#" class="footer-link">Careers</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Support</h4>
+                        <a href="#" class="footer-link">FAQ</a>
+                        <a href="#" class="footer-link">Contact</a>
+                        <a href="#" class="footer-link">Shipping</a>
+                        <a href="#" class="footer-link">Returns</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 Posana. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="footer-legal-link">Privacy Policy</a>
+                    <a href="#" class="footer-legal-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const locationCards = document.querySelectorAll('.location-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.getAttribute('data-filter');
+
+                locationCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        document.getElementById('locationSearch').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const searchValue = this.value.toLowerCase();
+                locationCards.forEach(card => {
+                    const text = card.textContent.toLowerCase();
+                    if (text.includes(searchValue) || searchValue === '') {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        });
+
+        document.querySelectorAll('.btn-primary.btn-small').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const address = this.closest('.location-content').querySelector('.info-text').textContent;
+                window.open(`https://maps.google.com/?q=${encodeURIComponent(address)}`, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>

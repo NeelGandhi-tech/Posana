@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Successful — Posana</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav id="mainNav" class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="https://eatposana.com/cdn/shop/files/logo_new_e4990b7c-e496-4582-b93c-a1f8a7928409.png?v=1738559624&width=360" alt="Posana" style="height: 36px; width: auto; display: block;"/>
+                </a>
+            </div>
+            <div id="navMenu" class="nav-menu">
+                <a href="index.html#shop" class="nav-link">Shop</a>
+                <a href="index.html#videos" class="nav-link">Community</a>
+                <a href="store-locator.html" class="nav-link">Store Locator</a>
+                <a href="index.html#about" class="nav-link">Our Story</a>
+            </div>
+            <button class="btn-order" onclick="window.location.href='checkout.html'">View Cart</button>
+        </div>
+    </nav>
+
+    <div class="checkout-container" style="min-height: 70vh; display: flex; align-items: center; justify-content: center;">
+        <div style="text-align: center; max-width: 600px; padding: 2rem;">
+            <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--color-sage);">Order Successful!</h1>
+            <p style="font-size: 1.2rem; color: var(--color-charcoal); margin-bottom: 2rem;">
+                Thank you for your purchase! We've sent a confirmation email to your address.
+            </p>
+            <div id="sessionInfo" style="margin-bottom: 2rem; padding: 1rem; background: var(--color-cream); border-radius: 8px;">
+                <p style="color: var(--color-olive);">Loading order details...</p>
+            </div>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-primary" onclick="window.location.href='index.html'">Continue Shopping</button>
+                <button class="btn btn-outline" onclick="window.location.href='index.html#shop'">Shop More</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">Posana</h3>
+                    <p class="footer-tagline">Protein doesn't have to be boring.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 Posana. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Get session ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+        
+        if (sessionId) {
+            // Verify session with backend
+            fetch(`/verify-session/${sessionId}`)
+                .then(res => {
+                    if (!res.ok) {
+                        throw new Error('Failed to verify session');
+                    }
+                    return res.json();
+                })
+                .then(session => {
+                    const sessionInfo = document.getElementById('sessionInfo');
+                    const amount = (session.amount_total / 100).toFixed(2);
+                    const customerEmail = session.customer_details?.email || session.customer_email || 'N/A';
+                    
+                    sessionInfo.innerHTML = `
+                        <div style="text-align: left;">
+                            <p><strong>Order ID:</strong> ${session.id.substring(0, 20)}...</p>
+                            <p><strong>Amount Paid:</strong> $${amount}</p>
+                            <p><strong>Status:</strong> <span style="color: var(--color-sage);">${session.payment_status === 'paid' ? '✅ Paid' : session.payment_status}</span></p>
+                            <p><strong>Email:</strong> ${customerEmail}</p>
+                            ${session.shipping ? `
+                                <p><strong>Shipping to:</strong> ${session.shipping.address.line1}, ${session.shipping.address.city}, ${session.shipping.address.state} ${session.shipping.address.postal_code}</p>
+                            ` : ''}
+                        </div>
+                    `;
+                    
+                    // Clear cart
+                    localStorage.removeItem('posanaCart');
+                    console.log('✅ Cart cleared after successful payment');
+                })
+                .catch(error => {
+                    console.error('Error verifying session:', error);
+                    document.getElementById('sessionInfo').innerHTML = 
+                        '<p style="color: var(--color-terracotta);">Could not verify order details, but payment was successful.</p><p>Check your email for confirmation.</p>';
+                    
+                    // Clear cart anyway
+                    localStorage.removeItem('posanaCart');
+                });
+        } else {
+            document.getElementById('sessionInfo').innerHTML = 
+                '<p>Order successful! Check your email for confirmation.</p>';
+            localStorage.removeItem('posanaCart');
+        }
+    </script>
+</body>
+</html>
+

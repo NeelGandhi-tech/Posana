@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posana — Organic Superfoods & Plant-Based Nutrition</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <video class="background-video" autoplay muted loop playsinline preload="auto">
+        <source src="videos/v12.mov" type="video/mp4">
+    </video>
+    
+    <div id="emailPopup" class="email-popup">
+        <div id="popupOverlay" class="popup-overlay"></div>
+        <div class="popup-content">
+            <button id="popupClose" class="popup-close">×</button>
+            <div class="popup-image">
+                <div class="popup-badge">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">15% OFF</div>
+                    <div style="font-size: 0.9rem;">YOUR FIRST ORDER</div>
+                </div>
+            </div>
+            <div class="popup-text">
+                <h2>Join the Posana Community</h2>
+                <p>Get 15% off your first order + exclusive Bay Area wellness tips & recipes</p>
+                <form id="emailForm" class="popup-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Join Community</button>
+                </form>
+                <p class="popup-disclaimer">We respect your inbox. Unsubscribe anytime.</p>
+            </div>
+        </div>
+    </div>
+
+    <nav id="mainNav" class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="https://eatposana.com/cdn/shop/files/logo_new_e4990b7c-e496-4582-b93c-a1f8a7928409.png?v=1738559624&width=360" alt="Posana" style="height: 36px; width: auto; display: block;"/>
+                </a>
+            </div>
+            <div id="navMenu" class="nav-menu">
+                <a href="#shop" class="nav-link">Shop</a>
+                <a href="#videos" class="nav-link">Community</a>
+                <a href="store-locator.html" class="nav-link">Store Locator</a>
+                <a href="#about" class="nav-link">Our Story</a>
+            </div>
+            <button class="btn-order" onclick="if(typeof ShopifyCart !== 'undefined') { ShopifyCart.redirectToCart(); } else { window.location.href='https://eatposana.com/cart'; }">View Cart</button>
+            <button id="navToggle" class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-video-bg">
+            <video class="hero-background-video" autoplay muted loop playsinline preload="auto">
+                <source src="videos/h4.mov" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-label">20g Protein · 5g Sugar · Clean Ingredients</span>
+                <h1 class="hero-title">Tired of chocolate protein bars? <span class="italic word-elephant">Me too.</span></h1>
+                <p class="hero-subtitle">flavor made with love, based in berkeley, ca</p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary btn-large">Preorder Now</button>
+                    <button class="btn btn-outline btn-large">Watch Videos</button>
+                </div>
+                <div class="hero-trust">
+                    <div class="trust-item">
+                        <span class="trust-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        <span>Based in Berkeley, CA</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L13.09 8.26L20 9L14 14L15.18 21L12 17.77L8.82 21L10 14L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        <span>Real flavors</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        <span>Made with love</span>
+                    </div>
+                </div>
+                <div class="floating-elements">
+                    <div class="floating-element element-1">
+                        <img src="img/Asset 1@300x.png" alt="Elephant" style="width: 40px; height: 40px; opacity: 0.7;">
+                    </div>
+                    <div class="floating-element element-2">
+                        <img src="img/Asset 7@300x.png" alt="Elephant" style="width: 35px; height: 35px; opacity: 0.6;">
+                    </div>
+                    <div class="floating-element element-3">
+                        <img src="img/Asset 13@300x.png" alt="Elephant" style="width: 30px; height: 30px; opacity: 0.8;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section" id="shop">
+        <div class="section-header">
+            <span class="section-label">Featured Collection</span>
+            <h2 class="section-title">
+                Almost too pretty to <span class="italic">eat</span>
+            </h2>
+            <p class="section-description">What protein is meant to be</p>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-card featured">
+                <div class="menu-card-image">
+                    <span class="menu-badge">Sale</span>
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #ff763f 0%, #d4725c 100%);">
+                        <img src="img/Cinnavanilla 6x6 Wrapper Single Both v2 (1).png" alt="Cinnavanilla Protein Bar" class="product-image" style="width: 100%; height: 100%; object-fit: cover;">
+                        <video class="product-video" muted loop playsinline preload="auto" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <source src="videos/v12.mov" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="menu-card-content">
+                    <h3>Cinnavanilla Protein Bar<br>(12-Pack)</h3>
+                    <p>20g of protein, 5g of sugar, 220 calories. Sweet and nutty goodness.</p>
+                    <div class="menu-card-footer">
+                        <span class="price">$35.99 <span style="text-decoration: line-through; color: #999; font-size: 0.9em;">$42.00</span></span>
+                        <button class="btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-card-image">
+                    <span class="menu-badge">Sale</span>
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <img src="https://eatposana.com/cdn/shop/files/Matcha6x6WrapperSingleBothv2_b4d80604-9758-4181-b53c-032fc6c0551d.png?v=1748830550&width=720" alt="Matcha Latte Protein Bar" class="product-image" style="width: 100%; height: 100%; object-fit: cover;">
+                        <video class="product-video" muted loop playsinline preload="auto" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <source src="videos/v5.mov" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="menu-card-content">
+                    <h3>Posana Matcha Latte <br>(12-pack)</h3>
+                    <p>Clean energy meets authentic matcha flavor. Fuel your day the right way.</p>
+                    <div class="menu-card-footer">
+                        <span class="price">$35.99 <span style="text-decoration: line-through; color: #999; font-size: 0.9em;">$42.00</span></span>
+                        <button class="btn-add-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="menu-card-image">
+                    <span class="menu-badge">Sold Out</span>
+                    <div class="image-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <img src="https://eatposana.com/cdn/shop/files/Mango6x6WrapperSingleBothv2.png?v=1752730066&width=720" alt="Mango Coconut Protein Bar" class="product-image" style="width: 100%; height: 100%; object-fit: cover;">
+                        <video class="product-video" muted loop playsinline preload="auto" style="width: 100%; height: 100%; object-fit: cover; display: none;">
+                            <source src="videos/h9.mov" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="menu-card-content">
+                    <h3>Posana Mango Coconut (with Turmeric)</h3>
+                    <p>Tropical vibes meet anti-inflammatory power. Coming back soon.</p>
+                    <div class="menu-card-footer">
+                        <span class="price">$35.99 <span style="text-decoration: line-through; color: #999; font-size: 0.9em;">$42.00</span></span>
+                        <button class="btn-add-cart" disabled>Sold Out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-cta">
+            <button class="btn btn-primary btn-large">Preorder Your 12-Pack</button>
+            <p style="margin-top: 1rem; color: var(--color-olive);">10% off for all 12-packs • Free shipping on orders $30+</p>
+        </div>
+    </section>
+
+    <section class="influencer-section" id="videos">
+        <div class="influencer-header">
+            <span class="section-label">Community</span>
+            <h2 class="section-title">
+                What People Are <span class="italic">Saying</span>
+            </h2>
+            <p class="section-description">Real reviews from our community of health enthusiasts</p>
+        </div>
+
+        <div class="influencer-grid">
+            <div class="influencer-card">
+                <div class="influencer-video">
+                    <video class="tiktok-video" muted playsinline loop autoplay preload="auto" poster="https://eatposana.com/cdn/shop/files/0000.jpg?v=1739794496&width=2000">
+                        <source src="videos/instagram/@eatposana protein bar is made by a UC Berkeley student so we had to support 🐻💛💙We loved how .mp4" type="video/mp4"/>
+                    </video>
+                    <div class="video-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                </div>
+                <div class="influencer-info">
+                    <div class="influencer-avatar" style="background: linear-gradient(135deg, #ff763f 0%, #d4725c 100%);"></div>
+                    <div class="influencer-details">
+                        <h4>@travelwtiff</h4>
+                        <p>UC Berkeley student-made — clean and light. Trying mango + matcha next time 🐻💛💙</p>
+                        <div class="engagement">
+                            <span class="likes">❤️ 2.3K</span>
+                            <span class="comments">💬 89</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="influencer-card">
+                <div class="influencer-video">
+                    <video class="tiktok-video" muted playsinline loop autoplay preload="auto" poster="https://eatposana.com/cdn/shop/files/0000.jpg?v=1739794496&width=2000">
+                        <source src="videos/instagram/Tried to have fun with this edit but it’s a little bit outside of my skills lol — anyway grwm to.mp4" type="video/mp4"/>
+                    </video>
+                    <div class="video-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                </div>
+                <div class="influencer-info">
+                    <div class="influencer-avatar" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+                    <div class="influencer-details">
+                        <h4>@kassandra.suriano</h4>
+                        <p>GRWM ride — fun edit before cycling 🚴‍♀️</p>
+                        <div class="engagement">
+                            <span class="likes">❤️ 1.8K</span>
+                            <span class="comments">💬 67</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="influencer-card">
+                <div class="influencer-video">
+                    <video class="tiktok-video" muted playsinline loop autoplay preload="auto" poster="https://eatposana.com/cdn/shop/files/0000.jpg?v=1739794496&width=2000">
+                        <source src="videos/instagram/use code [CASUELA] for a discount off @eatposana protein bars 🫦.mp4" type="video/mp4"/>
+                    </video>
+                    <div class="video-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                </div>
+                <div class="influencer-info">
+                    <div class="influencer-avatar" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                    <div class="influencer-details">
+                        <h4>@casuelax</h4>
+                        <p>Use code CASUELA for a discount off @eatposana protein bars 🫦</p>
+                        <div class="engagement">
+                            <span class="likes">❤️ 3.1K</span>
+                            <span class="comments">💬 124</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="influencer-card">
+                <div class="influencer-video">
+                    <video class="tiktok-video" muted playsinline loop autoplay preload="auto" poster="https://eatposana.com/cdn/shop/files/0000.jpg?v=1739794496&width=2000">
+                        <source src="videos/instagram/You can congratulate me with my very first PR package!! Now I can read haters’ comments while ea.mp4" type="video/mp4"/>
+                    </video>
+                    <div class="video-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                </div>
+                <div class="influencer-info">
+                    <div class="influencer-avatar" style="background: linear-gradient(135deg, #8B9D83 0%, #4A5D3F 100%);"></div>
+                    <div class="influencer-details">
+                        <h4>@caramelnseasalt</h4>
+                        <p>My first PR package — snacking while reading comments. Thanks @eatposana 💗</p>
+                        <div class="engagement">
+                            <span class="likes">❤️ 2.7K</span>
+                            <span class="comments">💬 98</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="influencer-cta">
+            <p>Join thousands of satisfied customers who've made the switch to <strong>clean protein</strong></p>
+            <button class="btn btn-outline">Preorder Now</button>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <div class="about-shape"></div>
+                <div class="founder-headshot-large">
+                    <img src="img/headshot adi (1).jpeg" alt="Posana Founder" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;">
+                </div>
+                <div class="about-stamp">
+                    <span>Since</span>
+                    <span class="year">2025</span>
+                </div>
+            </div>
+            <div class="about-content">
+                <span class="section-label">Our Story</span>
+                <h2 class="section-title">Started from the dorm kitchen</h2>
+                <p class="about-text">I started this out of the dorm kitchen because protein bars are boring. We so too much chocolate chip, cookie dough and peanut butter and not enough diverse flavors. So that’s what Posana is doing. We not are working with amazing creators and athletes throughout the US</p>
+                <p class="about-text">
+                    We believe protein should taste incredible and fuel incredible performance. No compromises on flavor, no shortcuts on nutrition. Just clean protein that works.
+                </p>
+                
+                <div class="about-values">
+                    <div class="value-item">
+                        <span class="value-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        <div class="value-text">
+                            <h4>Based in Berkeley, CA</h4>
+                            <p>Crafted locally with care and intention.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <span class="value-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        <div class="value-text">
+                            <h4>Real Flavors</h4>
+                            <p>No artificial flavors. Just authentic taste that satisfies.</p>
+                        </div>
+                    </div>
+                    <div class="value-item">
+                        <span class="value-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L13.09 8.26L20 9L14 14L15.18 21L12 17.77L8.82 21L10 14L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        <div class="value-text">
+                            <h4>Made with Love</h4>
+                            <p>20g of quality protein without the junk ingredients.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="testimonials-header">
+            <span class="section-label">Wholesale Inquiries</span>
+            <h2 class="section-title">Join our movement for <span class="italic">clean protein</span></h2>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Finally, a protein bar that doesn't taste like cardboard. The Cinnavanilla is incredible - sweet, nutty, and actually satisfying."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar" style="background: linear-gradient(135deg, #ff763f 0%, #d4725c 100%);"></div>
+                    <div class="author-info">
+                        <span class="author-name">Sarah M.</span>
+                        <span class="author-location">Athlete</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card featured">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"As a collegiate athlete, I need fuel that works. Posana gives me the protein I need without the sugar crash. Game changer."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);"></div>
+                    <div class="author-info">
+                        <span class="author-name">Jade Bai</span>
+                        <span class="author-location">UC Davis Golf</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"The Matcha Latte flavor is unreal. Clean energy that actually tastes like real matcha, not artificial flavoring."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                    <div class="author-info">
+                        <span class="author-name">Mike T.</span>
+                        <span class="author-location">Fitness Enthusiast</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="order-cta-section">
+        <h2 class="cta-title">Don't miss out on our March 2025 Launch!</h2>
+        <p class="cta-subtitle">Preorder now and be the first to taste what protein is meant to be</p>
+        
+        <div class="cta-buttons">
+            <button class="btn btn-primary btn-large">Preorder Now</button>
+            <button class="btn btn-outline btn-large">Wholesale Inquiries</button>
+        </div>
+
+        <div class="cta-partners">
+            <span>Free shipping on all orders $30+</span>
+            <div class="partner-logos">
+                <span class="partner-logo">10% off 12-packs</span>
+                <span class="partner-logo">March 2025 Launch</span>
+                <span class="partner-logo">Bay Area's cleanest protein bar</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">Posana</h3>
+                    <p class="footer-tagline">Protein doesn’t have to be boring.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">TikTok</a>
+                        <a href="#" class="social-link">Facebook</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Shop</h4>
+                        <a href="#" class="footer-link">All Products</a>
+                        <a href="#" class="footer-link">Bundles</a>
+                        <a href="#" class="footer-link">Subscriptions</a>
+                        <a href="#" class="footer-link">Gift Cards</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Company</h4>
+                        <a href="#about" class="footer-link">Our Story</a>
+                        <a href="store-locator.html" class="footer-link">Store Locator</a>
+                        <a href="#" class="footer-link">Sustainability</a>
+                        <a href="#" class="footer-link">Careers</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Support</h4>
+                        <a href="#" class="footer-link">FAQ</a>
+                        <a href="#" class="footer-link">Contact</a>
+                        <a href="#" class="footer-link">Shipping</a>
+                        <a href="#" class="footer-link">Returns</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 Posana. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#" class="footer-legal-link">Privacy Policy</a>
+                    <a href="#" class="footer-legal-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Falling elephants removed per design update -->
+
+    <script src="shopify-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

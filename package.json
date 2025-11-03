@@ -1,0 +1,26 @@
+{
+  "name": "posana-website",
+  "version": "1.0.0",
+  "description": "Modern website for Posana - Nourish Differently",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "static": "python3 -m http.server 8080"
+  },
+  "keywords": [
+    "food",
+    "health",
+    "organic",
+    "website",
+    "posana"
+  ],
+  "author": "Posana Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "stripe": "^14.0.0",
+    "cors": "^2.8.5"
+  }
+}
+
