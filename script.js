@@ -341,31 +341,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Floating Elements Animation Enhancement
-const floatingElements = document.querySelectorAll('.floating-element');
-let mouseX = 0;
-let mouseY = 0;
-
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX / window.innerWidth - 0.5;
-    mouseY = e.clientY / window.innerHeight - 0.5;
-});
-
-function animateFloatingElements() {
-    floatingElements.forEach((element, index) => {
-        const speed = (index + 1) * 15;
-        const x = mouseX * speed;
-        const y = mouseY * speed;
-        
-        element.style.transform = `translate(${x}px, ${y}px)`;
-    });
-    
-    requestAnimationFrame(animateFloatingElements);
-}
-
-if (floatingElements.length > 0) {
-    animateFloatingElements();
-}
+// Floating Elements removed
 
 // Instagram Video Play on Hover
 document.querySelectorAll('.insta-video').forEach(video => {
