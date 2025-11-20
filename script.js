@@ -100,47 +100,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Cart Management - Shopify Integration
-// Load Shopify cart helper
-let shopifyCartLoaded = false;
-
-// Update cart badge count from Shopify
+// Cart Management
+// Update cart badge count
 async function updateCartBadge() {
-    // If shopify-config.js is loaded, use Shopify cart
-    if (typeof ShopifyCart !== 'undefined') {
-        try {
-            const itemCount = await ShopifyCart.getItemCount();
-            const cartButtons = document.querySelectorAll('.btn-order');
+    try {
+        const cart = JSON.parse(localStorage.getItem('posanaCart')) || [];
+        const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const cartButtons = document.querySelectorAll('.btn-order');
+        
+        cartButtons.forEach(button => {
+            // Remove existing badge if any
+            const existingBadge = button.querySelector('.cart-badge');
+            if (existingBadge) {
+                existingBadge.remove();
+            }
             
-            cartButtons.forEach(button => {
-                // Remove existing badge if any
-                const existingBadge = button.querySelector('.cart-badge');
-                if (existingBadge) {
-                    existingBadge.remove();
-                }
-                
-                // Add badge if cart has items
-                if (itemCount > 0) {
-                    const badge = document.createElement('span');
-                    badge.className = 'cart-badge';
-                    badge.textContent = itemCount;
-                    button.appendChild(badge);
-                }
-            });
-        } catch (error) {
-            console.error('Error updating cart badge:', error);
-        }
-    } else {
-        // Fallback: check if shopify-config.js script exists
-        if (!shopifyCartLoaded) {
-            const script = document.createElement('script');
-            script.src = 'shopify-config.js';
-            script.onload = () => {
-                shopifyCartLoaded = true;
-                updateCartBadge();
-            };
-            document.head.appendChild(script);
-        }
+            // Add badge if cart has items
+            if (itemCount > 0) {
+                const badge = document.createElement('span');
+                badge.className = 'cart-badge';
+                badge.textContent = itemCount;
+                button.appendChild(badge);
+            }
+        });
+    } catch (error) {
+        console.error('Error updating cart badge:', error);
     }
 }
 
@@ -187,52 +171,37 @@ document.addEventListener('DOMContentLoaded', function() {
                 productId = 'cinnavanilla';
             }
             
-            // Add to Shopify cart
-            if (typeof ShopifyCart !== 'undefined' && typeof getVariantId !== 'undefined') {
-                const variantId = getVariantId(productId);
-                
-                if (!variantId) {
-                    console.error('Variant ID not found for product:', productId);
-                    alert('Product not configured. Please add variant IDs in shopify-config.js');
-                    return;
-                }
-                
-                // Disable button and show loading
-                this.disabled = true;
-                const originalText = this.textContent;
-                this.textContent = 'Adding...';
-                
-                try {
-                    const result = await ShopifyCart.addItem(variantId, 1);
-                    
-                    if (result.success) {
-                        this.textContent = '✓ Added';
-                        this.style.background = '#8B9D83';
-                        
-                        // Update cart badge
-                        updateCartBadge();
-                        
-                        showNotification('🛒 Item added to cart!');
-                        
-                        // Redirect to Shopify cart after delay
-                        setTimeout(() => {
-                            ShopifyCart.redirectToCart();
-                        }, 1000);
-                    } else {
-                        throw new Error(result.error || 'Failed to add to cart');
-                    }
-                } catch (error) {
-                    console.error('Error adding to cart:', error);
-                    alert('Failed to add item to cart: ' + error.message);
-                    this.textContent = originalText;
-                    this.disabled = false;
-                }
+            // Add to cart
+            const cart = JSON.parse(localStorage.getItem('posanaCart')) || [];
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
             } else {
-                // Fallback: redirect directly to product page or use Shopify Buy Button
-                console.warn('Shopify cart not configured. Redirecting to store...');
-                // You can redirect to the product page on your Shopify store
-                window.location.href = `https://eatposana.com/products/${productId}`;
+                cart.push({ id: productId, quantity: 1 });
             }
+            
+            localStorage.setItem('posanaCart', JSON.stringify(cart));
+            
+            // Disable button and show loading
+            this.disabled = true;
+            const originalText = this.textContent;
+            this.textContent = 'Adding...';
+            
+            setTimeout(() => {
+                this.textContent = '✓ Added';
+                this.style.background = '#8B9D83';
+                
+                // Update cart badge
+                updateCartBadge();
+                
+                showNotification('🛒 Item added to cart!');
+                
+                // Redirect to checkout after delay
+                setTimeout(() => {
+                    window.location.href = 'checkout.html';
+                }, 1000);
+            }, 300);
         });
     });
 });

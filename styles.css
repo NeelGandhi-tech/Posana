@@ -1796,12 +1796,12 @@ body::before {
     font-size: 1.5rem;
 }
 
-/* Stripe Payment Form */
+/* Payment Form */
 .payment-form {
     margin-top: 1.5rem;
 }
 
-.stripe-card-element {
+.card-element {
     padding: 1.25rem 1rem;
     border: 2px solid var(--color-sand);
     border-radius: 8px;
@@ -1810,7 +1810,7 @@ body::before {
     margin-bottom: 1rem;
 }
 
-.stripe-card-element:focus-within {
+.card-element:focus-within {
     border-color: var(--color-terracotta);
     box-shadow: 0 0 0 3px rgba(255, 118, 63, 0.1);
 }

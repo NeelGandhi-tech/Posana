@@ -49,7 +49,7 @@
                 <a href="store-locator.html" class="nav-link">Store Locator</a>
                 <a href="#about" class="nav-link">Our Story</a>
             </div>
-            <button class="btn-order" onclick="if(typeof ShopifyCart !== 'undefined') { ShopifyCart.redirectToCart(); } else { window.location.href='https://eatposana.com/cart'; }">View Cart</button>
+            <button class="btn-order" onclick="window.location.href='/checkout'">Checkout</button>
             <button id="navToggle" class="nav-toggle">
                 <span></span>
                 <span></span>
@@ -67,7 +67,6 @@
         </div>
         <div class="hero-content">
             <div class="hero-text">
-                <span class="hero-label">20g Protein · 7-9g of fiber · Clean Ingredients</span>
                 <h1 class="hero-title">Tired of chocolate protein bars? <span class="italic">Me too.</span></h1>
                 <p class="hero-subtitle">flavor made with love, based in berkeley, ca</p>
                 <div class="hero-cta">
@@ -455,8 +454,15 @@
 
     <!-- Falling elephants removed per design update -->
 
-    <script src="shopify-config.js"></script>
     <script src="script.js"></script>
+    <script>
+        const variantIds = {
+            "Cinnavanilla": "41190753632331",
+            "Matcha Latte": "41450301161547",
+        }
+        // https://eatposana.com/cart/123:1,456:2,789:1
+
+    </script>
 </body>
 </html>
 
