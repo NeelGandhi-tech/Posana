@@ -317,12 +317,12 @@ body::before {
 
 /* Hero Section */
 .hero {
-    padding: 10rem 2rem 6rem;
+    padding: 7rem 2rem 6rem;
     position: relative;
     overflow: hidden;
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .hero-video-bg {
