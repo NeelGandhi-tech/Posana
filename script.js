@@ -613,3 +613,41 @@ accessibilityStyles.textContent = `
     }
 `;
 document.head.appendChild(accessibilityStyles);
+
+// Info Popup Functions (Shipping, Careers)
+function showInfoPopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup) {
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Close on Escape key
+        const escapeHandler = (e) => {
+            if (e.key === 'Escape' && popup.classList.contains('active')) {
+                closeInfoPopup(popupId);
+                document.removeEventListener('keydown', escapeHandler);
+            }
+        };
+        document.addEventListener('keydown', escapeHandler);
+    }
+}
+
+function closeInfoPopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup) {
+        popup.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Add overlay click handlers for info popups
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.info-popup .popup-overlay').forEach(overlay => {
+        overlay.addEventListener('click', function() {
+            const popup = this.closest('.info-popup');
+            if (popup) {
+                closeInfoPopup(popup.id);
+            }
+        });
+    });
+});

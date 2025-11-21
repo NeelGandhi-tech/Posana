@@ -725,6 +725,35 @@
         </div>
     </section>
 
+    <div id="shippingPopup" class="info-popup">
+        <div class="popup-overlay"></div>
+        <div class="popup-content popup-content-simple">
+            <button class="popup-close" onclick="closeInfoPopup('shippingPopup')">×</button>
+            <div class="popup-text">
+                <h2>Shipping Information</h2>
+                <p>Posana uses standard US shipping. We only ship domestic and not international.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="mailto:hello@eatposana.com?subject=Shipping Inquiry" class="btn btn-primary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="careersPopup" class="info-popup">
+        <div class="popup-overlay"></div>
+        <div class="popup-content popup-content-simple">
+            <button class="popup-close" onclick="closeInfoPopup('careersPopup')">×</button>
+            <div class="popup-text">
+                <h2>Careers</h2>
+                <p>Please reach out to <a href="mailto:hello@eatposana.com">hello@eatposana.com</a> with your resume and experience.</p>
+                <p style="margin-top: 1rem;">We are looking for marketing and growth roles, and looking for younger people.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="mailto:hello@eatposana.com?subject=Career Inquiry" class="btn btn-primary">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-main">
@@ -732,32 +761,27 @@
                     <h3 class="footer-logo">Posana</h3>
                     <p class="footer-tagline">Protein doesn’t have to be boring.</p>
                     <div class="footer-social">
-                        <a href="#" class="social-link">Instagram</a>
-                        <a href="#" class="social-link">TikTok</a>
-                        <a href="#" class="social-link">Facebook</a>
+                        <a href="https://www.instagram.com/eatposana/" target="_blank" class="social-link">Instagram</a>
+                        <a href="https://www.tiktok.com/@eatposana" target="_blank" class="social-link">TikTok</a>
+                        <a href="https://www.facebook.com/eatposana" target="_blank" class="social-link">Facebook</a>
                     </div>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
                         <h4 class="footer-title">Shop</h4>
-                        <a href="index.html#shop" class="footer-link">All Products</a>
-                        <a href="#" class="footer-link">Bundles</a>
-                        <a href="#" class="footer-link">Subscriptions</a>
-                        <a href="#" class="footer-link">Gift Cards</a>
+                        <a href="https://eatposana.com/products" class="footer-link">All Products</a>
                     </div>
                     <div class="footer-column">
                         <h4 class="footer-title">Company</h4>
                         <a href="index.html#about" class="footer-link">Our Story</a>
                         <a href="store-locator.html" class="footer-link">Store Locator</a>
-                        <a href="#" class="footer-link">Sustainability</a>
-                        <a href="#" class="footer-link">Careers</a>
+                        <a href="#" class="footer-link" onclick="event.preventDefault(); showInfoPopup('careersPopup');">Careers</a>
                     </div>
                     <div class="footer-column">
                         <h4 class="footer-title">Support</h4>
-                        <a href="#" class="footer-link">FAQ</a>
-                        <a href="#" class="footer-link">Contact</a>
-                        <a href="#" class="footer-link">Shipping</a>
-                        <a href="#" class="footer-link">Returns</a>
+                        <a href="#" class="footer-link" onclick="event.preventDefault(); showInfoPopup('careersPopup');">Careers</a>
+                        <a href="mailto:hello@eatposana.com" class="footer-link">Contact</a>
+                        <a href="#" class="footer-link" onclick="event.preventDefault(); showInfoPopup('shippingPopup');">Shipping</a>
                     </div>
                 </div>
             </div>

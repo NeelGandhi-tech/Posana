@@ -181,6 +181,43 @@ body::before {
     text-align: center;
 }
 
+/* Info Popups (Shipping, Careers) */
+.info-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-popup.active {
+    display: flex;
+}
+
+.popup-content-simple {
+    max-width: 600px;
+    width: 95%;
+    grid-template-columns: 1fr;
+    padding: 0;
+}
+
+.popup-content-simple .popup-text {
+    padding: 3rem 2.5rem;
+}
+
+.popup-content-simple .popup-text a {
+    color: var(--color-sage);
+    text-decoration: underline;
+}
+
+.popup-content-simple .popup-text a:hover {
+    color: var(--color-forest);
+}
+
 /* Navigation */
 .nav {
     position: fixed;
